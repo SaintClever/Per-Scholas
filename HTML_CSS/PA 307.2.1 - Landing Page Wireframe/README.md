@@ -14,8 +14,8 @@
 <ins>Application Ideas:</ins>
   - SaaS
     - Social Media:
-      - NANME: Social Corner - Standard social Media App
-      - NANME: Multi-Social (extension) - Social Media Consolidation and management tool / Application
+      - NAME: Social Corner - Standard social Media App
+      - NAME: Multi-Social (extension) - Social Media Consolidation and management tool / Application
       ![image](Multi_Social.png)
       <br><br>
 
