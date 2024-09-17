@@ -16,6 +16,7 @@
     - Social Media:
       - NANME: Social Corner - Standard social Media App
       - NANME: Multi-Social (extension) - Social Media Consolidation and management tool / Application
+      ![image](Multi_Social.png)
       <br><br>
 
     - Job / Career Forum (extension):
@@ -24,7 +25,9 @@
         - Autolocates a minimum of 1 job for you to apply to for a day
         - auto populates job form details
         - Uses ai to auto-generate custom
-        - How to monetize?<br><br>
+        - How to monetize?
+    ![image](Water_Cooler_Talk.png)
+    <br><br>
 
 
 <ins>Free Application:</ins>
