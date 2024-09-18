@@ -31,7 +31,8 @@
 
 
 <ins>Free Application:</ins>
-- NANME: Genki 100 - Healthcare application for locating free to low-cost healthcare providers near you.
+- NAME: Genki 100 - Healthcare application for locating free to low-cost healthcare providers near you.
+- ***Skin Cancer detection application***
 <br><br>
 
 
