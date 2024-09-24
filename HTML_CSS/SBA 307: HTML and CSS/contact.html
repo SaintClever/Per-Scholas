@@ -38,9 +38,19 @@
       margin-left: auto;
     }
   }
+
+  tfoot>tr>td {
+    padding-top: 15px;
+  }
+
+  tfoot>tr>td>button {
+    padding: 5px 15px;
+  }
 </style>
 
 <body>
+
+
 
   <header>
     <h1 id="nav-title">Saint. Clever</h1>
@@ -60,28 +70,62 @@
   <main
     style="background-color: #eaeaea; display: flex; justify-content: space-between; align-items: center; margin: 25px; border-radius: 5px;">
 
-    <aside style="background-color: black; border-radius: 5px 0px 0px 5px; padding: 35vh 0;">
+    <aside style="background-color: black; border-radius: 5px 0px 0px 5px; padding: 5vh 0;">
       <sidebar style="color: white; font-size: 15px; text-orientation: upright; writing-mode: vertical-lr;">
         ネスタ セイント。クレバー アーチメント
       </sidebar>
     </aside>
 
     <article style="padding: 25px;">
-      <section style="display: flex; justify-content:space-evenly; flex-wrap: wrap;">
-        <img src="assets/7.jpg" alt="" width="225px" style="padding-bottom: 25px;">
 
-        <img src="assets/8.jpg" alt="" width="225px" style="padding-bottom: 25px;">
+      <table width="100%" cellpaddin="0" cellspacing="0" style="padding: 15px; text-align: center;">
+        <thead>
+          <tr>
+            <th>
+              Silver Plan 1
+            </th>
+            <th>
+              Gold Plan 2
+            </th>
+            <th>
+              Platinum Plan 3
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Perfect for Beginners</td>
+            <td>For serious Ethusiasts</td>
+            <td>When only the best will do</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><button>Buy Now</button></td>
+            <td><button>Buy Now</button></td>
+            <td><button>Buy Now</button></td>
+          </tr>
+        </tfoot>
+      </table>
 
-        <img src="assets/9.jpg" alt="" width="225px" style="padding-bottom: 25px;">
-      </section>
+      <form action="">
+        <label for="cars">Choose a Artwork:</label>
+        <select name="cars" id="cars">
+          <option value="China Piece">China Piece</option>
+          <option value="Africa Piece">Africa Piece</option>
+          <option value="Kyrgyzstan Piece">Kyrgyzstan Piece</option>
+          <option value="Italy Piece">Italy Piece</option>
+        </select>
+        <br><br>
+      </form>
 
-      <section style="display: flex; justify-content:space-evenly; flex-wrap: wrap;">
-        <img src="assets/10.jpg" alt="" width="225px" style="padding-bottom: 25px;">
-
-        <img src="assets/11.jpg" alt="" width="225px" style="padding-bottom: 25px;">
-
-        <img src="assets/12.jpg" alt="" width="225px" style="padding-bottom: 25px;">
-      </section>
+      <form action="/">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="First Name"><br><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+        <input type="submit" value="Submit">
+      </form>
 
       <br>
       <hr>
