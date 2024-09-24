@@ -10,9 +10,32 @@
 </head>
 
 <style>
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 900px) {
     main {
       flex-wrap: wrap;
+    }
+
+    img {
+      width: 25%;
+      margin-left: auto;
+    }
+
+    aside,
+    sidebar {
+      width: 100% !important;
+      font-size: 12px !important;
+      writing-mode: horizontal-tb !important;
+      border-radius: 5px 5px 0px 0px !important;
+      margin-bottom: 10px !important;
+      text-align: center !important;
+      padding: 10px !important;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    img {
+      width: 100%;
+      margin-left: auto;
     }
   }
 </style>
@@ -33,12 +56,35 @@
 
 
   <main
-    style="background-color: #eaeaea; display: flex; justify-content: space-between; align-items: center; margin: 50px; border-radius: 5px;">
+    style="background-color: #eaeaea; display: flex; justify-content: space-between; align-items: center; margin: 25px; border-radius: 5px;">
+
+    <aside style="background-color: black; border-radius: 5px 0px 0px 5px; padding: 150px 5px;">
+      <sidebar style="color: white; font-size: 15px; text-orientation: upright; writing-mode: vertical-lr;">
+        ネスタ セイント。クレバー アーチメント
+      </sidebar>
+    </aside>
 
     <article style="padding: 25px;">
-      <section>
-        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="250px"
-          style="border: 1px solid black; border-radius: 5px;">
+      <section style="display: flex; justify-content:space-evenly; flex-wrap: wrap;">
+        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="225px"
+          style="padding-bottom: 25px;">
+
+        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="225px"
+          style="padding-bottom: 25px;">
+
+        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="225px"
+          style="padding-bottom: 25px;">
+      </section>
+
+      <section style="display: flex; justify-content:space-evenly; flex-wrap: wrap;">
+        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="225px"
+          style="padding-bottom: 25px;">
+
+        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="225px"
+          style="padding-bottom: 25px;">
+
+        <img src="https://avatars.githubusercontent.com/u/8880726?v=4" alt="" width="225px"
+          style="padding-bottom: 25px;">
       </section>
 
       <br>
@@ -51,14 +97,6 @@
         deserunt id exercitationem modi!
       </section>
     </article>
-
-    <aside
-      style="background-color: black; border-radius: 0px 5px 5px 0px; color: white; padding: 10px; writing-mode: vertical-lr; text-orientation: upright; width: 50px;">
-      <sidebar style=" font-size: 25px;">
-        ネスタ セイント。クレバー アーチメント
-      </sidebar>
-    </aside>
-
   </main>
 
   <footer style="text-align: center;">
