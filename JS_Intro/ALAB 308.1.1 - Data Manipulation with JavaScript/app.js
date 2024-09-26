@@ -32,18 +32,15 @@ console.log();
 let miles = 1500;
 let budget = 175;
 let cost = 3; // cost per gallon
-let gallons = 23;
-let hours = 5;
 
-let mph = miles / hours;
-let mpg = miles / gallons;
+let mph = 75; // mph = miles / hours
+let mpg = 23; // mpg = miles / gallons
 let total = (miles / mpg) * cost; // Total fuel cost
 
-console.log(`Miles Per Gallon: ${mpg.toFixed(2)}\nTotal Cost: ${total.toFixed(2)}`);
-console.log(`At ${mph} miles per hour, you get ${mpg.toFixed(2)} miles per gallon.`);
+console.log(`Miles Per Gallon: ${mpg.toFixed(2)}\nMiles Per hour: ${mph.toFixed(2)}\nTotal Cost: $${total.toFixed(2)}\n`);
 
+console.log(`At ${mph.toFixed(2)} miles per hour, you get ${mpg.toFixed(2)} miles per gallon.`);
 
-
-
-
-
+console.log(`How many gallons of fuel will you need for the entire trip?: ${'gallons'}`);
+console.log(`Will your budget be enough to cover the fuel expense?: ${total < budget}`)
+console.log(`How long will the trip take, in hours?: ${miles / mph}`)
