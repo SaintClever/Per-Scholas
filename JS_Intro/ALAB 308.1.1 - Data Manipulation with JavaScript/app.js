@@ -43,3 +43,22 @@ console.log(`At ${mph.toFixed(2)} miles per hour, you get ${mpg.toFixed(2)} mile
 console.log(`How many gallons of fuel will you need for the entire trip?: ${(miles / mpg).toFixed(2)}`);
 console.log(`Will your budget be enough to cover the fuel expense?: ${total < budget}`)
 console.log(`How long will the trip take, in hours?: ${(miles / mph).toFixed(2)}`)
+console.log();
+
+
+// --- Part 3: Future Exploration --- //
+// Which makes the most sense for the trip?
+let func = (miles, budget, cost, mph, mpg) => {
+  let total = (miles / mpg) * cost;
+
+  if (total < budget === true) {
+    console.log(`These make the MOST sense for the trip:\nMiles Per Gallon: ${mpg.toFixed(2)}\nMiles Per hour: ${mph.toFixed(2)}\nTotal Cost: $${total.toFixed(2)}\n`);
+  } else {
+    console.log(`These make the LEAST sense for the trip:\nMiles Per Gallon: ${mpg.toFixed(2)}\nMiles Per hour: ${mph.toFixed(2)}\nTotal Cost: $${total.toFixed(2)}\n`);
+  }
+}
+
+
+func(1500, 175, 3, 55, 30);
+func(1500, 175, 3, 60, 28);
+func(1500, 175, 3, 75, 23);
