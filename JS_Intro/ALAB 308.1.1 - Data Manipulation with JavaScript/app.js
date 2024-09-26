@@ -40,7 +40,6 @@ let total = (miles / mpg) * cost; // Total fuel cost
 console.log(`Miles Per Gallon: ${mpg.toFixed(2)}\nMiles Per hour: ${mph.toFixed(2)}\nTotal Cost: $${total.toFixed(2)}\n`);
 
 console.log(`At ${mph.toFixed(2)} miles per hour, you get ${mpg.toFixed(2)} miles per gallon.`);
-
-console.log(`How many gallons of fuel will you need for the entire trip?: ${'gallons'}`);
+console.log(`How many gallons of fuel will you need for the entire trip?: ${(miles / mpg).toFixed(2)}`);
 console.log(`Will your budget be enough to cover the fuel expense?: ${total < budget}`)
-console.log(`How long will the trip take, in hours?: ${miles / mph}`)
+console.log(`How long will the trip take, in hours?: ${(miles / mph).toFixed(2)}`)
