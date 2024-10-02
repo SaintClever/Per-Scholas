@@ -15,16 +15,18 @@ console.log();
 
 
 
-let data = myArray(csv0).slice(1);
+let data = myArray(csv0).slice(1);  // Skip the header row
 let keys = ['id', 'name', 'occupation', 'age'];
 
-let myObject = {};
 let output = [];
 
 for (let i = 0; i < data.length; i++) {
-  for (let j = 0; j < data.length; j++) {
-    // console.log(i, output[i], j, keys[j], data[i][j]);
-    myObject[keys[j]] =  data[i][j];
+  let myObject = {};  // Create a new object for each row
+  for (let j = 0; j < keys.length; j++) {
+    // console.log(keys);
+    myObject[keys[j]] = data[i][j];
   }
-  console.log(myObject);
+  output.push(myObject);
 }
+
+console.log(output);
