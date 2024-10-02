@@ -10,9 +10,24 @@ console.log();
 
 
 // Part 2: Prime Time
-if (num < 1) {
-  console.log(num, "not prime");
+let primes = [];
+
+for (let i = 2; i <= 100; i++) {
+  let isPrime = true;
+  
+  for (let j = 2; j <= Math.sqrt(i); j++) {
+    if (i % j === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+  
+  if (isPrime) {
+    primes.push(i);
+  }
 }
+
+console.log(primes);
 console.log();
 
 
