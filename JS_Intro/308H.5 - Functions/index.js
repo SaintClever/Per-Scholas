@@ -18,7 +18,8 @@ console.log();
 
 // Practice Activity 2: Write a Function EXPRESSION
 let planetHasWater = function(planet) {
-  return planet.toLowerCase() === "earth" || planet.toLowerCase() === "mars" ? true: false;
+  let planetCase = planet.toLowerCase();
+  return planetCase === "earth" || planetCase === "mars" ? true: false;
 }
 console.log(planetHasWater('earTH'));
 console.log();
@@ -26,4 +27,26 @@ console.log();
 
 // Practice Activity 2: Write a Function ARROW
 let hasWater = (planet) => planet.toLowerCase() === "earth" || planet.toLowerCase() === "mars" ? true: false;
-console.log(hasWater('earTH'));
+console.log(hasWater('PluTO'));
+
+åå
+
+// SELF-STUDY - Disregard check //
+// arguments keyword
+let argumentsTest_00 = function(...hello) {
+  console.log(typeof arguments, arguments);
+  return hello;
+}
+
+console.log(argumentsTest_00('Hello', 'world'));
+console.log();
+
+
+// arguments keyword
+let argumentsTest_01 = function(hello, world) {
+  console.log(arguments);
+  console.log(hello, world);
+  return hello;
+}
+
+console.log(argumentsTest_01('Hello'));
