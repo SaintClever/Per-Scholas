@@ -93,6 +93,32 @@ let arr = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
   { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
 
 
-for (let i in arr) {
-  console.log(arr[i]);
-}
+// Sort the array by age.
+let orderByAge = arr.sort((a, b) => a.age - b.age);
+console.log(orderByAge);
+console.log();
+
+
+// Filter the array to remove entries with an age greater than 50.
+let lessThanFifthy = arr.filter((user) => user.age < 50);
+console.group(lessThanFifthy);
+console.log();
+
+
+// Map the array to change the “occupation” key to “job” and increment every age by 1.
+let occupation = arr.map((obj => {
+  // Rename obj and delete original name
+  obj.job = obj.occupation;
+  delete obj.occupation;
+  
+  // parse age and add
+  obj.age = parseInt(obj.age) + 1;
+
+  return obj
+}));
+console.log(occupation);
+console.log();
+
+
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
