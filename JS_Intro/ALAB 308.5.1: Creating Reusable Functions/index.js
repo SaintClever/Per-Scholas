@@ -122,3 +122,11 @@ console.log();
 
 // Use the reduce method to calculate the sum of the ages.
 // Then use the result to calculate the average age.
+// 0 is the default initial value for the accumulator
+let sumAndAverage = arr.reduce((accumulator, obj) => accumulator += obj.age, 0);
+console.log(`Total: ${sumAndAverage}`);
+console.log(`Average: ${sumAndAverage / arr.length}`);
+
+
+// Part 3: Thinking Critically
+// Take an object and increment its age field.
