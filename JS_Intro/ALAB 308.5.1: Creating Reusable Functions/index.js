@@ -126,7 +126,74 @@ console.log();
 let sumAndAverage = arr.reduce((accumulator, obj) => accumulator += obj.age, 0);
 console.log(`Total: ${sumAndAverage}`);
 console.log(`Average: ${sumAndAverage / arr.length}`);
+console.log();
 
 
 // Part 3: Thinking Critically
 // Take an object and increment its age field.
+let newDate = new Date();
+
+let myObj = {
+  name: {
+    first: 'Nesta',
+    middle: "Saint. Clever",
+    last: 'Parchment',
+  }, 
+  age: 150,
+  updated_at: [newDate],
+};
+
+myObj.age += 1;
+console.log(myObj);
+console.log();
+
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+// DEEP COPY:
+
+let deepCopy = (obj) => {
+  let newObj = {
+    name: {},
+    age: 0,
+    updated_at: [],
+  };
+
+  newObj.name.first = obj.name.first;
+  newObj.name.middle = obj.name.middle;
+  newObj.name.last = obj.name.last;
+  newObj.age = obj.age + 1;
+  newObj.updated_at = [newDate.setDate(867-5309)];
+
+  return newObj;
+}
+
+console.log(deepCopy(myObj));
+console.log();
+
+
+// JSON
+let jsonCopy = (obj) => {
+  let jsonString = JSON.stringify(obj);
+  console.log(jsonString);
+
+  return JSON.parse(jsonString);
+}
+
+console.log(jsonCopy(myObj));
+console.log();
+
+
+// Part 4: Thinking Practically
+
+// Part 5: Thinking Back
+// How many of the scripts could be turned into functions?
+// All
+
+// What would the parameters look like? What kind of returns should they have?
+// They would be more params and return mostly objects and arrays
+
+// Could you package your code into even smaller blocks, creating helper functions?
+// Yes I would create helper functions to better assist my main function, therefore making it more modular
+
+// What else could be changed to optimize the code, knowing what you now know?
+// I would use more JavaScript objects and functions to prevent hoisting
