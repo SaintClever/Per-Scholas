@@ -153,19 +153,20 @@ let deepCopy = (obj) => {
   let newObj = {
     name: {},
     age: 0,
-    updated_at: [],
+    updated_at: () => {},
   };
 
   newObj.name.first = obj.name.first;
   newObj.name.middle = obj.name.middle;
   newObj.name.last = obj.name.last;
   newObj.age = obj.age + 1;
-  newObj.updated_at = obj.updated_at.setDate(8675309);
+  newObj.updated_at = () => obj.updated_at.setDate(8675309);
 
   return newObj;
 }
 
 console.log(deepCopy(myObj));
+console.log(deepCopy(myObj).updated_at());
 console.log();
 
 
