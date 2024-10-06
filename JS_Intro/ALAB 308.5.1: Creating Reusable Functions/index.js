@@ -131,8 +131,6 @@ console.log();
 
 // Part 3: Thinking Critically
 // Take an object and increment its age field.
-let newDate = new Date();
-
 let myObj = {
   name: {
     first: 'Nesta',
@@ -140,7 +138,7 @@ let myObj = {
     last: 'Parchment',
   }, 
   age: 150,
-  updated_at: [newDate],
+  updated_at: new Date(),
 };
 
 myObj.age += 1;
@@ -162,7 +160,7 @@ let deepCopy = (obj) => {
   newObj.name.middle = obj.name.middle;
   newObj.name.last = obj.name.last;
   newObj.age = obj.age + 1;
-  newObj.updated_at = [newDate.setDate(867-5309)];
+  newObj.updated_at = obj.updated_at.setDate(8675309);
 
   return newObj;
 }
