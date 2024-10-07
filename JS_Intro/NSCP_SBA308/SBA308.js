@@ -77,19 +77,65 @@ const LearnerSubmissions = [
 ];
 
 
-let avg = () => {
-  let id = []
 
+let userId = () => {
+  let id = [];
+  let result = []
+  
+  // User ID
   for (let i in LearnerSubmissions) {
-    // console.log(LearnerSubmissions[i].learner_id); consoles user ID's
+    // console.log(LearnerSubmissions[i].learner_id); // consoles user ID's
     if (!id.includes(LearnerSubmissions[i].learner_id)) {
       id.push(LearnerSubmissions[i].learner_id);
     }
   }
-  console.log(id);
+  // console.log(id); // Output UNIQUE user id's in an array to prevent duplicates
+  
+  // User ID Object
+  for (let i in id) {
+    let myObject = {};
+    myObject.id = id[i];
+    result.push(myObject);
+  }
+  // console.log(result); // Output id's in an object
+
+  // return result;
+  return id;
+}
+// console.log(userId()); // Invoke userId
+
+
+// let usersObject = (userId) => {
+//   let users = [];
+
+//   for (let i = 0; i < userId.length; i++) {
+//     let myObject = {};
+//     myObject["id"] = userId[i];
+//     users.push(myObject);
+//   }
+//   console.log(users);
+// }
+
+// console.log(usersObject(userId()));
+
+
+
+let grades = () => {
+  let result = [];
+
+  for (let i in LearnerSubmissions) {
+    // console.log(LearnerSubmissions[i], LearnerSubmissions[i].learner_id)
+    // console.log();
+    for (let j in userId()) {
+      console.log(userId()[j]);
+      if (userId()[j] === LearnerSubmissions[i].learner_id) {
+        console.log(LearnerSubmissions[i].submission.score);
+      }
+    }
+  }
 }
 
-console.log(avg());
+console.log(grades());
 
 
 function getLearnerData(course, ag, submissions) {
