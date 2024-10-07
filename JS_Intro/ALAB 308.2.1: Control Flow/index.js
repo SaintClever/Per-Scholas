@@ -7,13 +7,14 @@ let plant = (radius = 5, plantSpace = 0.8, plantCount = 20, weeks = 2) => {
   let weeksPast = 0;
 
   while (weeksPast !== weeks) {
-    if (plantCount > plantSpace * maxCapacity) {
+    weeksPast += 1;
+    if (maxCapacity > (plantSpace * plantCount)) {
       console.log('Plants need to be Pruned.');
     } 
-    else if (area > (.5 * plantCount) || area < (.8 * plantCount)) {
+    else if (maxCapacity === (plantSpace * plantCount)) {
       console.log('Plants need to be Monitored.');
     }
-    else if (plantCount < (.5 * maxCapacity)) {
+    else if ((plantCount * plantCount) < maxCapacity) {
       console.log('There is room to plant more plants');
     }
   }
