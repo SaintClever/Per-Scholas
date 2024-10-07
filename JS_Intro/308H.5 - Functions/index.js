@@ -29,7 +29,6 @@ console.log();
 let hasWater = (planet) => planet.toLowerCase() === "earth" || planet.toLowerCase() === "mars" ? true: false;
 console.log(hasWater('PluTO'));
 
-åå
 
 // SELF-STUDY - Disregard check //
 // arguments keyword
