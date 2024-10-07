@@ -1,18 +1,13 @@
 // Part 1: Growing Pains
-let plant = (radius = 5, space = 0.8, plantCount = 20) => {
-  // let radius = 5;
-  // let space = 0.8;
-  // let plantCount = 20;
-  let weeks = plantCount * 2;
-
+let plant = (radius = 5, plantSpace = 0.8, plantCount = 20, weeks = 2) => {
   const PI = 3.1415;
   const area = PI * radius * radius;
-
+  let maxCapacity = Math.floor(area / plantSpace);
   
   let grow = true;
 
   while (grow) {
-    if (plantCount > 16) {
+    if (plantCount > plantSpace * maxCapacity) {
       console.log('Plants need to be Pruned.');
       grow = false;
     } 
@@ -20,7 +15,7 @@ let plant = (radius = 5, space = 0.8, plantCount = 20) => {
       console.log('Plants need to be Monitored.');
       grow = false;
     }
-    else if (space > 0.8) {
+    else if (plantCount < (.5 * maxCapacity)) {
       console.log('There is room to plant more plants');
       grow = false;
     }
@@ -28,7 +23,7 @@ let plant = (radius = 5, space = 0.8, plantCount = 20) => {
 
   return {
     'area': area,
-    'space': space,
+    'plantSpace': plantSpace,
     'plantCount': plantCount,
     'weeks': weeks,
   }
