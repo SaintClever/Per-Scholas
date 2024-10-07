@@ -6,17 +6,25 @@ let plant = (radius = 5, plantSpace = 0.8, plantCount = 20, weeks = 2) => {
   
   let weeksPast = 0;
 
+  let plantData = {
+    'area': area,
+    'plantSpace': plantSpace,
+    'plantCount': plantCount,
+    'weeks': weeks,
+  }
+
   while (weeksPast !== weeks) {
     weeksPast += 1;
-    if (maxCapacity > (plantSpace * plantCount)) {
+    if (maxCapacity > (plantCount * plantSpace)) {
       console.log('Plants need to be Pruned.');
     } 
-    else if (maxCapacity === (plantSpace * plantCount)) {
+    else if (maxCapacity === (plantCount * plantSpace)) {
       console.log('Plants need to be Monitored.');
     }
-    else if ((plantCount * plantCount) < maxCapacity) {
+    else if ((plantCount * plantSpace) < maxCapacity) {
       console.log('There is room to plant more plants');
     }
+    console.table(plantData);
   }
 
   return {
