@@ -129,23 +129,26 @@ function getLearnerData(course, ag, submissions) {
 
     return sub;
   }
-  console.log(submissionFunc());
+  let submission = submissionFunc();
+  console.log(submission);
   console.log();
 
 
-  let avg125 = [];
-  let avg132 = [];
+  let average = () => {
+    let avg125 = [], avg132 = [];
 
-  for (let i = 0; i < sub.length; i++) {
-    if (sub[i].id === 125) {
-      avg125.push(sub[i].score);
-    } else if (sub[i].id === 132) {
-      avg132.push(sub[i].score);
+    for (let i = 0; i < submission.length; i++) {
+      if (submission[i].id === 125) {
+        avg125.push(submission[i].score);
+      } else if (submission[i].id === 132) {
+        avg132.push(submission[i].score);
+      }
     }
+
+    return {125: avg125, 132: avg132};
   }
-
-  console.log(avg125, avg132);
-
+  console.log(average());
+  console.log();
 
   // const result = [
   //   {
