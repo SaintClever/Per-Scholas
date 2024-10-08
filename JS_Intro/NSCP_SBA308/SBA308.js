@@ -80,8 +80,6 @@ function getLearnerData(course, ag, submissions) {
   // here, we would process this data to achieve the desired result.
 
   let result = [];
-  let scoring = [];
-  let sub = [];
 
 
   // course
@@ -92,43 +90,61 @@ function getLearnerData(course, ag, submissions) {
 
 
   // ag
+  let assignmentFunc = () => {
+  let assignmentArray = [];
+
   for (let i in ag.assignments) {
-    let myObject = {};
+    let assignment = {};
 
-    myObject.id = ag.assignments[i].id;
-    myObject.due_at = ag.assignments[i].due_at;
-    myObject.points_possible = ag.assignments[i].points_possible;
+    assignment.id = ag.assignments[i].id;
+    assignment.due_at = ag.assignments[i].due_at;
+    assignment.points_possible = ag.assignments[i].points_possible;
 
-    if (!scoring.includes(myObject)) {
-      scoring.push(myObject)
+    if (!assignmentArray.includes(assignment)) {
+      assignmentArray.push(assignment);
     }
   }
-  console.log(scoring);
+
+  return assignmentArray;
+  }
+  console.log(assignmentFunc());
   console.log();
 
 
   // submissions
-  for (let i in submissions) {
-    let myObject = {}
+  let submissionFunc = () => {
+    let sub = [];
 
-    myObject.id = submissions[i].learner_id;
-    myObject.score = submissions[i].submission.score;
-    myObject.assignment_id = submissions[i].assignment_id;
+    for (let i in submissions) {
+      let submissionObject = {}
 
-    if (!sub.includes(myObject)) {
-      sub.push(myObject)
+      submissionObject.id = submissions[i].learner_id;
+      submissionObject.score = submissions[i].submission.score;
+      submissionObject.assignment_id = submissions[i].assignment_id;
+
+      if (!sub.includes(submissionObject)) {
+        sub.push(submissionObject)
+      }
     }
+
+    return sub;
   }
-  console.log(sub)
+  console.log(submissionFunc());
+  console.log();
 
 
-  let avg = 0;
+  let avg125 = [];
+  let avg132 = [];
+
   for (let i = 0; i < sub.length; i++) {
     if (sub[i].id === 125) {
-      avg += sub[i].score;
+      avg125.push(sub[i].score);
+    } else if (sub[i].id === 132) {
+      avg132.push(sub[i].score);
     }
   }
-  console.log(avg);
+
+  console.log(avg125, avg132);
 
 
   // const result = [
