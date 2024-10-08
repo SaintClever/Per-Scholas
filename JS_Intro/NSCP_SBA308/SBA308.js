@@ -76,85 +76,75 @@ const LearnerSubmissions = [
   }
 ];
 
-
-
-let userId = () => {
-  let id = [];
-  let result = []
-  
-  // User ID
-  for (let i in LearnerSubmissions) {
-    // console.log(LearnerSubmissions[i].learner_id); // consoles user ID's
-    if (!id.includes(LearnerSubmissions[i].learner_id)) {
-      id.push(LearnerSubmissions[i].learner_id);
-    }
-  }
-  // console.log(id); // Output UNIQUE user id's in an array to prevent duplicates
-  
-  // User ID Object
-  for (let i in id) {
-    let myObject = {};
-    myObject.id = id[i];
-    result.push(myObject);
-  }
-  // console.log(result); // Output id's in an object
-
-  // return result;
-  return id;
-}
-// console.log(userId()); // Invoke userId
-
-
-// let usersObject = (userId) => {
-//   let users = [];
-
-//   for (let i = 0; i < userId.length; i++) {
-//     let myObject = {};
-//     myObject["id"] = userId[i];
-//     users.push(myObject);
-//   }
-//   console.log(users);
-// }
-
-// console.log(usersObject(userId()));
-
-
-
-let grades = () => {
-  let result = [];
-
-  for (let i in LearnerSubmissions) {
-    // console.log(LearnerSubmissions[i], LearnerSubmissions[i].learner_id)
-    // console.log();
-    for (let j in userId()) {
-      console.log(userId()[j]);
-      if (userId()[j] === LearnerSubmissions[i].learner_id) {
-        console.log(LearnerSubmissions[i].submission.score);
-      }
-    }
-  }
-}
-
-console.log(grades());
-
-
 function getLearnerData(course, ag, submissions) {
   // here, we would process this data to achieve the desired result.
 
-  const result = [
-    {
-      id: 125,
-      avg: 0.985, // (47 + 150) / (50 + 150)
-      1: 0.94, // 47 / 50
-      2: 1.0 // 150 / 150
-    },
-    {
-      id: 132,
-      avg: 0.82, // (39 + 125) / (50 + 150)
-      1: 0.78, // 39 / 50
-      2: 0.833 // late: (140 - 15) / 150
+  let result = [];
+  let scoring = [];
+  let sub = [];
+
+
+  // course
+  for (let i in course) {
+    console.log(course[i]);
+  }
+  console.log();
+
+
+  // ag
+  for (let i in ag.assignments) {
+    let myObject = {};
+
+    myObject.id = ag.assignments[i].id;
+    myObject.due_at = ag.assignments[i].due_at;
+    myObject.points_possible = ag.assignments[i].points_possible;
+
+    if (!scoring.includes(myObject)) {
+      scoring.push(myObject)
     }
-  ];
+  }
+  console.log(scoring);
+  console.log();
+
+
+  // submissions
+  for (let i in submissions) {
+    let myObject = {}
+
+    myObject.id = submissions[i].learner_id;
+    myObject.score = submissions[i].submission.score;
+    myObject.assignment_id = submissions[i].assignment_id;
+
+    if (!sub.includes(myObject)) {
+      sub.push(myObject)
+    }
+  }
+  console.log(sub)
+
+
+  let avg = 0;
+  for (let i = 0; i < sub.length; i++) {
+    if (sub[i].id === 125) {
+      avg += sub[i].score;
+    }
+  }
+  console.log(avg);
+
+
+  // const result = [
+  //   {
+  //     id: 125,
+  //     avg: 0.985, // (47 + 150) / (50 + 150)
+  //     1: 0.94, // 47 / 50
+  //     2: 1.0 // 150 / 150
+  //   },
+  //   {
+  //     id: 132,
+  //     avg: 0.82, // (39 + 125) / (50 + 150)
+  //     1: 0.78, // 39 / 50
+  //     2: 0.833 // late: (140 - 15) / 150
+  //   }
+  // ];
 
   return result;
 }

@@ -41,6 +41,7 @@ console.log(output);
 console.log();
 
 
+
 // 2. Insert the following object at index 1:
 output.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
 console.log(output);
