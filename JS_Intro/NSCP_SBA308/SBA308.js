@@ -81,7 +81,6 @@ function getLearnerData(course, ag, submissions) {
 
   let result = [];
 
-
   // course
   for (let i in course) {
     console.log(course[i]);
@@ -91,23 +90,24 @@ function getLearnerData(course, ag, submissions) {
 
   // ag
   let assignmentFunc = () => {
-  let assignmentArray = [];
+    let assignmentArray = [];
 
-  for (let i in ag.assignments) {
-    let assignment = {};
+    for (let i in ag.assignments) {
+      let assignment = {};
 
-    assignment.id = ag.assignments[i].id;
-    assignment.due_at = ag.assignments[i].due_at;
-    assignment.points_possible = ag.assignments[i].points_possible;
+      assignment.id = ag.assignments[i].id;
+      assignment.due_at = ag.assignments[i].due_at;
+      assignment.points_possible = ag.assignments[i].points_possible;
 
-    if (!assignmentArray.includes(assignment)) {
-      assignmentArray.push(assignment);
+      if (!assignmentArray.includes(assignment)) {
+        assignmentArray.push(assignment);
+      }
     }
-  }
 
-  return assignmentArray;
+    return assignmentArray;
   }
-  console.log(assignmentFunc());
+  let assignment = assignmentFunc();
+  console.log(assignment);
   console.log();
 
 
