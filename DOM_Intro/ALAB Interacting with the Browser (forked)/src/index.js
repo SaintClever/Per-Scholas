@@ -4,6 +4,7 @@ const questions = [
   { "What is Minara's nick name?": "Mr. ES6 - 2015" },
   { "Where is Coach MidKnight located?": "Florida" },
   { "Who created JavaScript?": "Brendan Eich" },
+  { "Tommy what's Jenny's number?": 8675309 },
 ];
 
 let score = 0;
@@ -60,6 +61,11 @@ button.addEventListener("click", () => {
   if (userInput.value.toLowerCase() === answer.toLowerCase()) {
     score += 1;
     code.innerHTML = `Score: ${score}`;
+    if (score === 3) {
+      window.open(
+        "https://www.youtube.com/watch?v=6WTdTwcmxyo&ab_channel=TommyTutoneVEVO"
+      );
+    }
   } else {
     alert("Try again...");
     score -= 1;
