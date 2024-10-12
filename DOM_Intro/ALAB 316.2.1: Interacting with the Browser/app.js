@@ -9,6 +9,17 @@ let question = "javascript";
 
 button.addEventListener("click", () => {
   console.log(textarea.value);
+
+  if (textarea.value === "javascript") {
+    alert("Correct");
+    player1.style.width = `${player1.offsetWidth + 500}px`;
+  } else {
+    alert("Try again...");
+    player2.style.width = `${player2.offsetWidth + 500}px`;
+  }
+
+  // if (player1.offsetWidth === 250)
+
   textarea.value = '';
 });
 
