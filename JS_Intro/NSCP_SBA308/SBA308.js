@@ -145,11 +145,17 @@ function getLearnerData(course, ag, submissions) {
       }
     }
 
-    return {125: avg125, 132: avg132};
+    // avg125.map(accumulate, )
+
+    result = [{"avg": avg125},{"avg": avg132}]
+    console.log(result);
+    return result;
   }
   console.log(average());
   console.log();
 
+
+  
   // const result = [
   //   {
   //     id: 125,

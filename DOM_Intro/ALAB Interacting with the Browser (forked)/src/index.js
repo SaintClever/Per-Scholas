@@ -55,7 +55,7 @@ div3.appendChild(button);
 let textarea = document.querySelectorAll("textarea");
 let tableQuestion = document.querySelector("#question");
 
-button.addEventListener("click", () => {
+let myFunc = () => {
   let userInput = textarea[0];
 
   if (userInput.value.toLowerCase() === answer.toLowerCase()) {
@@ -77,9 +77,21 @@ button.addEventListener("click", () => {
 
   // Sloppy WET... 🤢🤮 yuck! 🫠
   userInput.value = "";
+  userInput.focus();
+
   randomIndex = Math.floor(Math.random() * questions.length);
   randomQuestion = questions[randomIndex];
   question = Object.keys(randomQuestion).toString();
   answer = Object.values(randomQuestion).toString();
   tableQuestion.innerText = question;
+};
+
+button.addEventListener("click", () => {
+  myFunc();
+});
+
+document.addEventListener("keypress", (e) => {
+  if (e.key === 13) { // e.code
+    myFunc();
+  }
 });

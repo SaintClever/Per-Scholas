@@ -1,0 +1,34 @@
+body {
+  /* background-color: #1a1e29; */
+  background-color: #242833;
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
+#textarea {
+  background-color: #242833;
+  resize: none;
+  width: 33%;
+  height: 100vh;
+  padding: 25px;
+  margin: 0;
+  border: 0;
+  border-right: 2px solid #1a1e29;
+  color: #fff;
+}
+
+#textarea:focus {
+  outline: none;
+}
+
+#output {
+  background-color: #fff;
+  width: 66%;
+  height: 100vh;
+  padding: 25px;
+}
